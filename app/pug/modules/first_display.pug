@@ -1,0 +1,64 @@
+extends ../templates/main-template
+
+block variables
+	- var pageTitle = 'ExLampLanding'
+
+	
+	.flex-tree
+		.first-display--main
+			p
+				|	Corporation ExLampLanding PO PPO GGH
+			h1
+				|	ExLampLanding S. N.
+			.first-display--photo
+				.first-display--next-photo
+					a(href="#")
+						| Следующее фото
+				.first-display--prev-photo
+					a(href="#")
+						| Предыдущее фото
+
+			.icon-technology
+				img(src="../img/icon/yoga3.png", alt="")
+				img(src="../img/icon/adaptive1.png", alt="")
+				img(src="../img/icon/yoga3.png", alt="")
+			
+			.lora
+				p
+					|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente repellat harum excepturi provident ut rem eius, illo quia delectus vitae dignissimos maiores assumenda sequi animi quaerat, consectetur vero voluptatum numquam porro aspernatur vel quos praesentium, commodi. Nulla sed, a non?
+
+			.first-display-footer
+				.button.black 
+					span
+						| Attention!
+				.button.black.yes 
+					span
+						| Achtung!
+
+
+
+
+				//- слайдер
+
+			.wrapp_opacity
+				<div class="wrapper_slider">
+					<input type="radio" name="point" id="slide1" checked>
+					<input type="radio" name="point" id="slide2">
+					<input type="radio" name="point" id="slide3">
+					<input type="radio" name="point" id="slide4">
+					<input type="radio" name="point" id="slide5">
+					<div class="slider">
+						<div class="slides slide1"></div>
+						<div class="slides slide2"></div>
+						<div class="slides slide3"></div>
+						<div class="slides slide4"></div>
+						<div class="slides slide5"></div>
+					</div>	
+					<div class="controls">
+						<label for="slide1"></label>
+						<label for="slide2"></label>
+						<label for="slide3"></label>
+						<label for="slide4"></label>
+						<label for="slide5"></label>
+					</div>
+				</div>		

@@ -1,0 +1,125 @@
+// Vars
+@import '../base/variables';
+@import '../base/mixins';
+
+.wrap-header {
+	// background-color: black;
+	width: 100%;
+	min-height: 3em;
+	
+	
+	.nav {
+		height: 3em;
+		position:relative;
+		background: black;
+		display: flex;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+		
+
+		.logo {
+			width: 3.5em;
+			height: 3.5em;
+		}
+
+		ul{
+			position: absolute;
+			min-width: 20%;
+			left: 11%;
+			margin-top: 1.3rem;
+			list-style-type: none;
+			font-size: 0;
+			
+
+			li {
+				
+				
+				list-style: none;
+				display: inline-block;
+  				
+				
+				a {
+					color: white;
+					text-decoration: none;
+					// font-weight: bold;
+					padding-left: 0.5em;
+					padding-right: 0.5em;
+					font-size: 0.7rem;
+					margin-right: 10px;				
+				}
+				a:hover, a.active {
+					border-bottom: 2px solid #c02323;
+					
+				}
+
+			}
+
+		}
+			
+		.header-section {
+			position: relative;
+			// width: 20%;
+			
+			
+
+			a.call {
+				margin-right: 9.7rem;
+				line-height: 3.5em;
+				font-size: 1em;
+				color: #e1dada;
+				text-decoration: none;
+				font-style: italic;
+				border-bottom: 1px solid @red;
+								
+			}
+			
+			.call::before {
+				content: '';
+				background: url("./../img/icon/phone.png") no-repeat;
+				transform: rotate(65deg);
+				
+				min-width: 1.7em;
+				min-height: 1.7em;
+				display: inline-block;
+				position: absolute;
+				top: .9em;
+				left: -1.5em;
+				
+				
+			}
+				
+			
+
+			.icon-header-find {
+				background: url("./../img/icon/login.png") no-repeat;
+				display: inline-block;
+				
+				right: 5em;
+				position:absolute;
+				min-width: 50px;
+				min-height: 50px;
+				margin: 5px;
+				
+
+			}
+
+			a.icon-header-login {
+				background: url("./../img/icon/find.png") no-repeat;
+				display: inline-block;
+				
+				right: 1em;
+				position:absolute;
+				min-width: 50px;
+				min-height: 50px;
+				margin: 5px;
+			}
+		}
+		
+
+	}
+	.nav-gradient {
+		height: 3em;
+		background: linear-gradient(to bottom, black, transparent);
+	}
+
+}

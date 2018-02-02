@@ -1,0 +1,81 @@
+//- 
+
+
+
+
+
+
+
+
+
+//- Вставка кнопок предыдущее-следующее фото
+
+
+
+.first-display--photo
+{
+    position: relative;
+    
+    .first-display--next-photo, .first-display--prev-photo {
+        position: absolute;
+        top: +3em;
+        
+        a
+        {
+            text-decoration: none;
+
+            color: white;
+        }
+
+        a:before, a:after
+        {
+            padding: 2em;
+
+            content: '';
+
+            background-image: url('../img/icon/arrow.png');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    }    
+    .first-display--next-photo
+    {
+        left: 0;
+        a:after {
+            display: none;
+        }
+    }
+
+    .first-display--prev-photo
+    {
+        right: 0;
+        a:before {
+            display: none;
+        }
+		a:after 
+        {
+            position: absolute;
+           width: 10em;
+           right: 10em;
+           // margin: 0 0;
+           //  background-position: 0 0;
+            background-repeat: repeat;
+            transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

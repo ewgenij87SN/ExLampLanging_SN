@@ -1,0 +1,440 @@
+// Vars
+@import '../base/variables';
+@import '../base/mixins';
+
+
+
+
+.flex-tree
+{
+    display: flex;
+
+    .first-display--main
+    {
+        width: 100%;
+        p
+        {
+            margin-top: 0.3em;
+            margin-bottom: 0.1em;
+            text-align: center;
+        }
+
+        h1
+        {
+            font-size: 3rem;
+
+            margin-top: .2em;
+            margin-bottom: .5em;
+            line-height: 1;
+
+            text-align: center;
+        }
+    }
+    .icon-technology
+    {
+        display: flex;
+
+        width: 20em;
+        margin: 0 auto;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+
+        -webkit-align-items: center;
+                align-items: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        
+
+
+        img
+        {
+            max-height: 10em;
+            margin-right: 2em;
+            box-shadow:10px green;
+        }
+        img:last-of-type
+        {
+            margin-right: 0;
+        }
+    }
+
+    .lora
+    {
+       	padding-top: 2.5em;
+        line-height: 1.5;
+		font-size: .7em;
+        width: 70%;
+        margin: 0 auto;
+        
+    }
+}
+
+// 
+
+
+
+
+
+
+
+
+
+// Вставка кнопок предыдущее-следующее фото
+
+
+
+.first-display--photo
+{
+    position: relative;
+    
+    .first-display--next-photo, .first-display--prev-photo {
+        position: absolute;
+        top: +3em;
+        
+        a
+        {
+            text-decoration: none;
+
+            color: white;
+        }
+
+        a:before, a:after
+        {
+            padding: 2em;
+
+            content: '';
+
+            background-image: url('../img/icon/arrow.png');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    }    
+    .first-display--next-photo
+    {
+        left: 0;
+        a:after {
+            display: none;
+        }
+    }
+
+    .first-display--prev-photo
+    {
+        right: 0;
+        a:before {
+            display: none;
+        }
+		a:after 
+        {
+           background-image: url('../img/icon/arrow-right.png');
+           
+           
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// Нижняя часть
+
+.first-display-footer
+{
+    display: flex;
+
+    width: 30em;
+    margin: 0 auto;
+
+
+    .button
+    {
+        font: 1em/140% Arial, Helvetica, sans-serif;
+
+        display: inline-block;
+
+        margin: 1.5em auto;
+        padding: .4em 1.2em .4em;
+
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+
+        -webkit-border-radius: .5em;
+           -moz-border-radius: .5em;
+                border-radius: .5em;
+        outline: none;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+                box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    }
+    .button:hover
+    {
+        text-decoration: none;
+    }
+    .button:active
+    {
+        position: relative;
+        top: 1px;
+    }
+
+    .button > span
+    {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .black
+    {
+        color: @red;
+        border: 1px solid @red;
+        background: white;
+        background: -webkit-gradient(linear, left top, left bottom, from(#323232), to(#000));
+        background: -moz-linear-gradient(top,  #323232,  #000);
+
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323232', endColorstr='#000000');
+    }
+    .black:hover
+    {
+        background: @red;
+        background: -webkit-gradient(linear, left top, left bottom, from(#C81212), to(#B80A0A));
+        background: -moz-linear-gradient(top,  #000 89%, #F10834);
+
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000');
+    }
+
+
+    .yes:hover
+    {
+        background: #f47c20;
+        background: -webkit-gradient(linear, left top, left bottom, from(#15E81A), to(#0BCA0B));
+        background: -moz-linear-gradient(top,  #000 89%,  #15E81A);
+
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000');
+    }
+
+    .black:active
+    {
+        color: #FF0000;
+        background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#323232));
+        background: -moz-linear-gradient(top,  #000,  #323232);
+
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#323232');
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// слайдер
+
+.wrapper_slider
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0;
+}
+
+.slider
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: inherit;
+    height: inherit;
+
+    background-color: black;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+       -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+         -o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.wrapper_slider > input
+{
+    display: none;
+}
+
+.slides
+{
+    position: absolute;
+
+    width: inherit;
+    height: inherit;
+
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+         -o-background-size: 100%;
+            background-size: 100%;
+}
+
+.slide1
+{
+    background-image: url('../img/bg/bg-color.png'), url('../img/bg/forest_1.jpg');
+}
+.slide2
+{
+    background-image: url('../img/bg/bg-color.png'), url('../img/bg/kosmos_1.jpg');
+}
+.slide3
+{
+    background-image: url('../img/bg/earth2_1.jpg');
+    
+}
+.slide4
+{
+    background-image: url('../img/bg/bg-color.png'), url('../img/bg/technology.jpg');
+}
+.slide5
+{
+    background-image: url('../img/bg/bg-color.png'), url('../img/bg/winter_1.jpg');
+}
+
+.wrapper_slider .controls
+{
+    position: absolute;
+    left: 50%;
+	
+	
+    margin-left: -98px;
+}
+
+.wrapper_slider label
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+    margin: 25px 12px 0 16px;
+
+    cursor: pointer;
+
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+
+         -o-border-radius: 50%;
+}
+
+.wrapper_slider label:after
+{
+    position: absolute;
+    top: -4px;
+    left: -4px;
+
+    display: block;
+
+    width: 12px;
+    height: 12px;
+
+    content: ' ';
+
+    border: 2px solid #ddd;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+
+         -o-border-radius: 50%;
+}
+
+.wrapper_slider label
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+    margin: 25px 12px 0 16px;
+
+    cursor: pointer;
+    -webkit-transition: background ease-in-out .5s;
+       -moz-transition: background ease-in-out .5s;
+         -o-transition: background ease-in-out .5s;
+            transition: background ease-in-out .5s;
+
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+
+         -o-border-radius: 50%;
+}
+
+.wrapper_slider label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5)
+	{
+	    background: #ddd;
+	}
+
+.slides
+{
+    width: inherit;
+    height: inherit;
+
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+       -moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+         -o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+            transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    -webkit-transform: scale(1.5);
+       -moz-transform: scale(1.5);
+         -o-transform: scale(1.5);
+            transform: scale(1.5);
+
+   
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5
+{
+    z-index: 100;
+
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+
+    opacity: 1;
+}
+
+.wrapp_opacity
+{
+   
+    background-color: black;
+   
+}
+
+
+
+// КОНЕЦ СЛАЙДЕРА
